@@ -7,7 +7,7 @@ TARGET = tpm_desktop
 INCLUDEPATH += . include
 QT += core gui
 QT += widgets
-
+RC_FILE = appicon.rc
 
 # Input
 HEADERS += \
@@ -18,3 +18,6 @@ FORMS += \
 SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp
+
+DISTFILES += \
+    appicon.rc
