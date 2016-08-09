@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>16x16_add.png</file>
+        <file>16x16_edit.png</file>
+        <file>16x16_exit.png</file>
+        <file>16x16_view.png</file>
+    </qresource>
+</RCC>

@@ -4,20 +4,25 @@
 
 TEMPLATE = app
 TARGET = tpm_desktop
-INCLUDEPATH += . include
+INCLUDEPATH += .
 QT += core gui
 QT += widgets
 RC_FILE = appicon.rc
 
 # Input
 HEADERS += \
-    include/mainwindow.h \
-    include/ui_mainwindow.h
+    mainwindow.h \
+    createaccount.h
 FORMS += \
-    forms/mainwindow.ui
+    mainwindow.ui \
+    createaccount.ui
 SOURCES += \
-    src/main.cpp \
-    src/mainwindow.cpp
+    main.cpp \
+    mainwindow.cpp \
+    createaccount.cpp
 
 DISTFILES += \
     appicon.rc
+
+RESOURCES += \
+    res/tpm_res.qrc

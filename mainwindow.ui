@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TPM Desktop</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>544</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNewAccount"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionViewAccount"/>
+    <addaction name="actionEditAccount"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewAccount"/>
+   <addaction name="separator"/>
+   <addaction name="actionViewAccount"/>
+   <addaction name="actionEditAccount"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNewAccount">
+   <property name="icon">
+    <iconset resource="res/tpm_res.qrc">
+     <normaloff>:/16x16_add.png</normaloff>:/16x16_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Account...</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new account</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="res/tpm_res.qrc">
+     <normaloff>:/16x16_exit.png</normaloff>:/16x16_exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Close application</string>
+   </property>
+  </action>
+  <action name="actionViewAccount">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/tpm_res.qrc">
+     <normaloff>:/16x16_view.png</normaloff>:/16x16_view.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;View Account...</string>
+   </property>
+   <property name="toolTip">
+    <string>Display an existing account</string>
+   </property>
+  </action>
+  <action name="actionEditAccount">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res/tpm_res.qrc">
+     <normaloff>:/16x16_edit.png</normaloff>:/16x16_edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Edit Account...</string>
+   </property>
+   <property name="toolTip">
+    <string>Update or delete an existing account</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About TPM...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res/tpm_res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
