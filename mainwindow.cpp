@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "createaccount.h"
 #include <QMessageBox>
+#include <QDesktopWidget>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     createWidget_(0)
 {
     ui->setupUi(this);
+
+    resize(QDesktopWidget().availableGeometry(this).size() * 0.7);
 
     // signals and slots
     connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(showAbout()));
@@ -26,7 +29,7 @@ void MainWindow::showAbout()
 {
     QMessageBox::about(this,
                        tr("About TPM Desktop"),
-                       tr("<h2>TPM 0.1</h2>"
+                       tr("<h1>TPM 0.1</h1>"
                           "<p>Copyright &copy; 2016 Tiger Payment and Mail</p>"
                           "<p>TPM Desktop is a system used to manage the accounts of TPM customers.</p>")
                        );
