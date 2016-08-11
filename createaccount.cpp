@@ -5,6 +5,9 @@
 #include <QSignalMapper>
 #include <QFileDialog>
 #include <QDir>
+#include <QPixmap>
+#include <QBitmap>
+#include <QStringList>
 
 CreateAccount::CreateAccount(QWidget *parent) :
     QWidget(parent),
@@ -14,7 +17,13 @@ CreateAccount::CreateAccount(QWidget *parent) :
 
     setMaxLengths();
     setupValidators();
-    enableSubmit();
+    setupCards();
+
+    ui->btnSubmit->setEnabled(false);
+    ui->cardBox->setVisible(false);
+    ui->balanceBox->setMinimumSize(ui->cardBox->sizeHint());
+
+
 
     // signals and slots
     QSignalMapper* mapper = new QSignalMapper(this);
@@ -127,4 +136,43 @@ void CreateAccount::resetForm()
     ui->editID->clear();
 
     enableSubmit();
+}
+
+void CreateAccount::setupCards()
+{
+    QPixmap visa(":/visa.png");
+    ui->lblVisa->setPixmap(visa);
+    ui->lblVisa->setMask(visa.mask());
+
+    QPixmap maestro(":/maestro.png");
+    ui->lblMaestro->setPixmap(maestro);
+    ui->lblMaestro->setMask(maestro.mask());
+
+    QPixmap amex(":/amex.png");
+    ui->lblAmex->setPixmap(amex);
+    ui->lblAmex->setMask(amex.mask());
+
+    // setup card year
+    ui->cmbCardYear->clear();
+    for(int i = 2016; i <= 2026; ++i) {
+        ui->cmbCardYear->addItem(QString::number(i));
+    }
+
+    // setup card month
+    ui->cmbCardMonth->clear();
+    QStringList months;
+    months << tr("January")
+           << tr("February")
+           << tr("March")
+           << tr("April")
+           << tr("May")
+           << tr("June")
+           << tr("July")
+           << tr("August")
+           << tr("September")
+           << tr("October")
+           << tr("November")
+           << tr("December")
+              ;
+    ui->cmbCardMonth->addItems(months);
 }

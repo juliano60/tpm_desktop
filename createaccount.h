@@ -20,6 +20,7 @@ private slots:
     void normalizeName(QWidget* sender);
     void addAttachment();
     void resetForm();
+    void setupCards();
 
 private:
     void setMaxLengths();

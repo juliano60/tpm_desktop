@@ -4,5 +4,9 @@
         <file>16x16_edit.png</file>
         <file>16x16_exit.png</file>
         <file>16x16_view.png</file>
+        <file>amex.png</file>
+        <file>maestro.png</file>
+        <file>mastercard.png</file>
+        <file>visa.png</file>
     </qresource>
 </RCC>
