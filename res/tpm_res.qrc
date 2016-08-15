@@ -8,5 +8,6 @@
         <file>maestro.png</file>
         <file>mastercard.png</file>
         <file>visa.png</file>
+        <file>splash.jpg</file>
     </qresource>
 </RCC>
