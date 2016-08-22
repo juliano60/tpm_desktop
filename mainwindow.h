@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class CreateAccount;
+class QLabel;
 
 namespace Ui {
 class MainWindow;
@@ -20,10 +21,15 @@ public:
 private slots:
     void showAbout();
     void handleCreate();
+    void addCustomer();
+    void updateStatusBar(const QString& str);
 
 private:
+    void createStatusBar();
+
     Ui::MainWindow *ui;
     CreateAccount* createWidget_;
+    QLabel* statusInfo_;
 };
 
 #endif // MAINWINDOW_H

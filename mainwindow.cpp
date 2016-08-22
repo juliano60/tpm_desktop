@@ -3,6 +3,8 @@
 #include "createaccount.h"
 #include <QMessageBox>
 #include <QDesktopWidget>
+#include <QScrollArea>
+#include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    resize(QDesktopWidget().availableGeometry(this).size() * 0.7);
+    createStatusBar();
+    resize(QDesktopWidget().availableGeometry(this).size() * 0.8);
 
     // signals and slots
     connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(showAbout()));
@@ -37,10 +40,29 @@ void MainWindow::showAbout()
 
 void MainWindow::handleCreate()
 {
-    if(!createWidget_) {
-        createWidget_ = new CreateAccount(this);
+    if(!createWidget_) {       
+        createWidget_ = new CreateAccount;
         this->setCentralWidget(createWidget_);
         setWindowTitle(tr("New Account"));
         createWidget_->show();
+        connect(createWidget_, SIGNAL(statusInfo(QString)), this, SLOT(updateStatusBar(const QString&)));
+
     }
+}
+
+void MainWindow::addCustomer()
+{
+
+}
+
+void MainWindow::updateStatusBar(const QString &str)
+{
+    statusInfo_->setText(str);
+}
+
+void MainWindow::createStatusBar()
+{
+    statusInfo_ = new QLabel(tr(""));
+    ui->statusBar->addWidget(statusInfo_, 1);
+    updateStatusBar(tr("Ready"));
 }

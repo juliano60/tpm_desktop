@@ -6,8 +6,9 @@ TEMPLATE = app
 TARGET = tpm_desktop
 INCLUDEPATH += .
 QT += core gui
-QT += widgets
+QT += widgets sql
 RC_FILE = appicon.rc
+CONFIG += console
 
 # Input
 HEADERS += \
