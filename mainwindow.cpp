@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "createaccount.h"
+#include "accountwidget.h"
 #include <QMessageBox>
 #include <QDesktopWidget>
 #include <QScrollArea>
@@ -9,7 +10,8 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    createWidget_(0)
+    createWidget_(0),
+    accountWidget_(0)
 {
     ui->setupUi(this);
 
@@ -20,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(showAbout()));
     connect(ui->actionExit, SIGNAL(triggered(bool)), this, SLOT(close()));
     connect(ui->actionNewAccount, SIGNAL(triggered(bool)), this, SLOT(handleCreate()));
-
+    connect(ui->actionViewAccount, SIGNAL(triggered(bool)), this, SLOT(showAccounts()));
 }
 
 MainWindow::~MainWindow()
@@ -46,13 +48,27 @@ void MainWindow::handleCreate()
         setWindowTitle(tr("New Account"));
         createWidget_->show();
         connect(createWidget_, SIGNAL(statusInfo(QString)), this, SLOT(updateStatusBar(const QString&)));
-
+    }
+    else {
+        createWidget_->show();
+        createWidget_->raise();
+        createWidget_->activateWindow();
     }
 }
 
-void MainWindow::addCustomer()
+void MainWindow::showAccounts()
 {
-
+    if(!accountWidget_) {
+        accountWidget_ = new AccountWidget;
+        this->setCentralWidget(accountWidget_);
+        setWindowTitle(tr("Accounts"));
+        accountWidget_->show();
+    }
+    else {
+        accountWidget_->show();
+        accountWidget_->raise();
+        accountWidget_->activateWindow();
+    }
 }
 
 void MainWindow::updateStatusBar(const QString &str)

@@ -87,17 +87,17 @@
   </action>
   <action name="actionViewAccount">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="icon">
     <iconset resource="res/tpm_res.qrc">
      <normaloff>:/16x16_view.png</normaloff>:/16x16_view.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;View Account...</string>
+    <string>&amp;View Accounts</string>
    </property>
    <property name="toolTip">
-    <string>Display an existing account</string>
+    <string>Display existing accounts</string>
    </property>
   </action>
   <action name="actionEditAccount">

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class CreateAccount;
+class AccountWidget;
 class QLabel;
 
 namespace Ui {
@@ -21,7 +22,7 @@ public:
 private slots:
     void showAbout();
     void handleCreate();
-    void addCustomer();
+    void showAccounts();
     void updateStatusBar(const QString& str);
 
 private:
@@ -29,6 +30,7 @@ private:
 
     Ui::MainWindow *ui;
     CreateAccount* createWidget_;
+    AccountWidget* accountWidget_;
     QLabel* statusInfo_;
 };
 

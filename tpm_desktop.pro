@@ -13,14 +13,17 @@ RC_FILE = appicon.rc
 # Input
 HEADERS += \
     mainwindow.h \
-    createaccount.h
+    createaccount.h \
+    accountwidget.h
 FORMS += \
     mainwindow.ui \
-    createaccount.ui
+    createaccount.ui \
+    accountwidget.ui
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    createaccount.cpp
+    createaccount.cpp \
+    accountwidget.cpp
 
 DISTFILES += \
     appicon.rc
