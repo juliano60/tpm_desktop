@@ -11,6 +11,5 @@
         <file>splash.jpg</file>
         <file>tick.png</file>
         <file>cross.png</file>
-        <file>cross_.png</file>
     </qresource>
 </RCC>

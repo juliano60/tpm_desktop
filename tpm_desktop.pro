@@ -8,7 +8,7 @@ INCLUDEPATH += .
 QT += core gui
 QT += widgets sql
 RC_FILE = appicon.rc
-CONFIG += console
+#CONFIG += console
 
 # Input
 HEADERS += \
